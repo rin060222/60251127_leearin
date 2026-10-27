@@ -1,0 +1,327 @@
+/* 내 노트북 */
+.poster {
+  width: 1512px;
+  height: 945px;
+  position: relative;
+}
+
+
+
+
+
+
+
+
+/* 흑백 세상 */
+.world {
+  width: 1512px;
+  height: 945px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  filter: grayscale(1) brightness(0.5);
+}
+/* 색 파앗 */
+.world.light {
+  animation-name: light-on;
+  animation-duration: 1.5s;
+  animation-delay: 2s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+}
+@keyframes light-on {
+  0% {
+    filter: grayscale(1) brightness(0.5);
+  }
+  40% {
+    filter: grayscale(0) brightness(1.5);
+  }
+  100% {
+    filter: grayscale(0) brightness(1);
+  }
+}
+
+.bg-img {
+  display: block;
+  width: 1512px;
+  height: 945px;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+
+
+
+
+
+
+
+
+
+/* 구름   */
+.cloud {
+  display: block;
+  width: 1512px;
+  height: 945px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  object-fit: cover;
+  object-position: 50% 50%;
+  pointer-events: none;
+
+  animation-name: move;
+  animation-duration: 15s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+.cd1 {
+  animation-direction: alternate;
+}
+/* ㄱㅜ름- 뒤 */
+.cd2 {
+  animation-direction: alternate-reverse;
+}
+/* 구름 - 앞 */
+.cd3 {
+  animation-name: move-near;
+  animation-direction: alternate-reverse;
+}
+
+@keyframes move {
+  from {
+    object-position: 30% 50%;
+  }
+  to {
+    object-position: 70% 50%;
+  }
+}
+@keyframes move-near {
+  from {
+    object-position: 20% 50%;
+  }
+  to {
+    object-position: 80% 50%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* 하늘 */
+.sky-area {
+  width: 1512px;
+  height: 260px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+.star {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  opacity: 0;
+}
+/* 별 4개 */
+.star-1 {
+  width: 70px;
+}
+.star-2 {
+  width: 30px;
+}
+.star-3 {
+  width: 54px;
+}
+.star-4 {
+  width: 18px;
+}
+
+
+
+
+
+
+
+
+/* 별(호수버전) */
+.lake-stars {
+  width: 1512px;
+  height: 945px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  pointer-events: none;
+}
+.lake-stars .star {
+  mix-blend-mode: plus-lighter;
+}
+.lake-star-1 {
+  width: 42px;
+  height: 20px;
+}
+.lake-star-2 {
+  width: 18px;
+  height: 9px;
+}
+.lake-star-3 {
+  width: 32px;
+  height: 15px;
+}
+.lake-star-4 {
+  width: 11px;
+  height: 5px;
+}
+
+.star.shine-a,
+.star.shine-b {
+  animation-duration: 4s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+.star.shine-a {
+  animation-name: shine-a;
+}
+.star.shine-b {
+  animation-name: shine-b;
+}
+
+
+
+
+
+/* 별 반짝반짝 */
+@keyframes shine-a {
+  0% {
+    opacity: 0;
+    transform: rotate(0deg);
+    filter: brightness(1);
+  }
+  10% {
+    opacity: 0.7;
+    filter: brightness(1.8);
+  }
+  20% {
+    filter: brightness(1);
+  }
+  30% {
+    filter: brightness(1.8);
+  }
+  50% {
+    opacity: 0.7;
+    filter: brightness(1);
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(90deg);
+    filter: brightness(1);
+  }
+}
+
+@keyframes shine-b {
+  0% {
+    opacity: 0;
+    transform: rotate(0deg);
+    filter: brightness(1);
+  }
+  10% {
+    opacity: 0.7;
+    filter: brightness(1.8);
+  }
+  20% {
+    filter: brightness(1);
+  }
+  30% {
+    filter: brightness(1.8);
+  }
+  50% {
+    opacity: 0.7;
+    filter: brightness(1);
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(90deg);
+    filter: brightness(1);
+  }
+}
+
+/* 타키랑 미츠하 */
+.taki,
+.mitsuha {
+  display: block;
+  position: absolute;
+  transition: left 2s ease-in-out;
+}
+.taki {
+  width: 261px;
+  top: 453px;
+  left: 695px;
+}
+.mitsuha {
+  width: 255px;
+  top: 502px;
+  left: 946px;
+}
+.taki.meet {
+  left: 814px;
+}
+.mitsuha.meet {
+  left: 827px;
+}
+
+
+
+
+
+
+
+/* 끈-끊어진거 */
+.rope-off {
+  display: block;
+  width: 312px;
+  position: absolute;
+  top: 661px;
+  left: 790px;
+  transition: opacity 0.5s ease-in-out;
+}
+.rope-off:hover {
+  filter: drop-shadow(0px 0px 6px white);
+}
+.rope-off.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* 끈-이어진거 */
+.rope-on {
+  display: block;
+  width: 88px;
+  position: absolute;
+  top: 661px;
+  left: 881px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1s ease-in-out;
+  transition-delay: 2s;
+}
+.rope-on.show {
+  opacity: 1;
+}
+
+.filter-img {
+  display: block;
+  width: 1512px;
+  height: 945px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  pointer-events: none;
+}

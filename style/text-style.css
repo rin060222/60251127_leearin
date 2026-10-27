@@ -1,0 +1,291 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;500;700&display=swap");
+
+/* 영화처럼 위아래에 검정색 두웅 */
+.bar {
+  width: 1512px;
+  height: 0px;
+  position: absolute;
+  left: 0px;
+  background-color: black;
+  pointer-events: none;
+}
+.bar-top {
+  top: 0px;
+}
+.bar-bottom {
+  top: 945px;
+}
+.bar-top.show,
+.bar-bottom.show {
+  animation-duration: 13.5s;
+  animation-delay: 3.5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+.bar-top.show {
+  animation-name: bar-top-move;
+}
+.bar-bottom.show {
+  animation-name: bar-bottom-move;
+}
+@keyframes bar-top-move {
+  0% {
+    height: 0px;
+  }
+  7% {
+    height: 111px;
+  }
+  85% {
+    height: 111px;
+  }
+  100% {
+    height: 0px;
+  }
+}
+@keyframes bar-bottom-move {
+  0% {
+    top: 945px;
+    height: 0px;
+  }
+  7% {
+    top: 834px;
+    height: 111px;
+  }
+  85% {
+    top: 834px;
+    height: 111px;
+  }
+  100% {
+    top: 945px;
+    height: 0px;
+  }
+}
+
+
+
+
+
+
+/* 타키랑 미츠하 대사 자막 */
+.sub {
+  width: 1512px;
+  position: absolute;
+  top: 700px;
+  left: 0px;
+  text-align: center;
+  color: white;
+  font-family: "Apple SD Gothic Neo", sans-serif;
+  font-weight: 500;
+  font-size: 26px;
+  letter-spacing: 1px;
+  pointer-events: none;
+  filter: drop-shadow(1px 0px 0px black) drop-shadow(-1px 0px 0px black)
+    drop-shadow(0px 1px 0px black) drop-shadow(0px -1px 0px black);
+}
+.sub-jp {
+  color: rgb(235, 215, 80);
+  font-style: italic;
+  font-size: 20px;
+}
+.sub span {
+  opacity: 0;
+}
+.sub.show span {
+  animation-name: type-in;
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+}
+@keyframes type-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.sub-1.show {
+  animation-name: sub-out;
+  animation-duration: 1s;
+  animation-delay: 9.5s;
+  animation-fill-mode: forwards;
+}
+.sub-2.show {
+  animation-name: sub-out;
+  animation-duration: 1s;
+  animation-delay: 15s;
+  animation-fill-mode: forwards;
+}
+@keyframes sub-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+
+
+
+
+
+
+
+
+/* 포스터 앞에 글자들 */
+.poster-text {
+  width: 1512px;
+  height: 945px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  color: white;
+  pointer-events: none;
+  filter: drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.5));
+}
+.copy-top,
+.title,
+.title-en,
+.copy-mid,
+.director,
+.release {
+  position: absolute;
+  font-family: "Noto Serif KR", serif;
+}
+.copy-top {
+  width: 700px;
+  top: 131px;
+  left: 139px;
+  text-align: left;
+  font-weight: 500;
+  font-size: 22px;
+  letter-spacing: 2px;
+  opacity: 0;
+}
+.title {
+  width: 800px;
+  top: 166px;
+  left: 132px;
+  text-align: left;
+  font-weight: 300;
+  font-size: 96px;
+  letter-spacing: 20px;
+  line-height: 1.2;
+}
+.title span {
+  opacity: 0;
+}
+.title-dot {
+  font-size: 36px;
+  margin-left: -22px;
+}
+.title-en {
+  width: 700px;
+  top: 286px;
+  left: 140px;
+  text-align: left;
+  font-family: "Apple SD Gothic Neo", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: 14px;
+  opacity: 0;
+}
+.copy-mid {
+  width: 600px;
+  top: 470px;
+  left: 139px;
+  text-align: left;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 1.6;
+}
+.copy-mid span {
+  opacity: 0;
+}
+.director {
+  width: 600px;
+  top: 732px;
+  left: 139px;
+  text-align: left;
+  font-weight: 700;
+  font-size: 22px;
+  opacity: 0;
+}
+/* 절찬상영중 */
+.release {
+  width: 600px;
+  top: 768px;
+  left: 139px;
+  text-align: left;
+  color: rgb(252, 240, 205);
+  font-family: "Apple SD Gothic Neo", sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+  letter-spacing: 2px;
+  opacity: 0;
+}
+.poster-text.show .copy-top {
+  animation-name: blur-in;
+  animation-duration: 1.5s;
+  animation-delay: 17s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+}
+.poster-text.show .title span {
+  animation-name: blur-in;
+  animation-duration: 1.2s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+}
+.poster-text.show .title-en {
+  animation-name: spread-in;
+  animation-duration: 1.5s;
+  animation-delay: 20.8s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+}
+.poster-text.show .copy-mid span {
+  animation-name: type-in;
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+}
+.poster-text.show .director {
+  animation-name: fade-in;
+  animation-duration: 1.5s;
+  animation-delay: 25s;
+  animation-fill-mode: forwards;
+}
+.poster-text.show .release {
+  animation-name: fade-in;
+  animation-duration: 1.5s;
+  animation-delay: 26.5s;
+  animation-fill-mode: forwards;
+}
+@keyframes blur-in {
+  from {
+    opacity: 0;
+    filter: blur(12px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0px);
+  }
+}
+@keyframes spread-in {
+  from {
+    opacity: 0;
+    letter-spacing: 40px;
+  }
+  to {
+    opacity: 1;
+    letter-spacing: 14px;
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
